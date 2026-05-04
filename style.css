@@ -63,7 +63,7 @@ body {
 /* --- HERO SECTION --- */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("BUKU.jpg");
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("kota.jpg");
     background-size: cover; background-position: center;
     display: flex; justify-content: center; align-items: center;
     color: white; text-align: center;
@@ -209,7 +209,7 @@ body {
 .hero-about {
     /* PANGGIL GAMBAR DI SINI */
     /* Ganti 'profile.png' dengan nama file background kamu */
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('BUKU.jpg');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('kota.jpg');
     
     background-size: cover;
     background-position: center;
@@ -403,7 +403,7 @@ body {
     }
 
     body, .hero-about {
-    background-image: url('BUKU.jpg');
+    background-image: url('kota.jpg');
     background-size: cover !important; /* WAJIB: Memaksa gambar menutupi seluruh area layar */
     background-position: center !important; /* Biar gambar tetap di tengah */
     background-repeat: no-repeat !important; /* Jangan sampai gambarnya pecah atau berulang */
@@ -413,4 +413,3 @@ body {
 
     }
 }
-
