@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELTRI PROJECT</title>
+    <!-- Link Font Montserrat agar teks keren -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>    
+    <!-- NAVBAR (Support Laptop & Android) -->
+    <nav class="container-navbar">
+        <div class="navbar-left">
+            <img src="logo.png" class="logo"> 
+            <span class="brand-text">ELTRI PROJECT</span>
+        </div>
+
+        <!-- Tombol Menu HP -->
+        <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="ul-navbar" id="nav-links">
+        <li><a href="about.html" class="menu-item">PUBLIC PROFILE ELTRI</a></li>
+        <li><a href="gmail.html" class="menu-item account-text">ACCOUNT</a></li>
+</ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ELTRI PUTRA ROMBEBUA</h1>
+        </div>
+    </section>
+
+<!-- SCRIPT MENU -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            menu.classList.toggle('is-active');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+
+<section class="profile-section">
+    <div class="container-flex">
+        <div class="image-wrapper">
+            <!-- Foto Utama -->
+            <img src="katolik.jpeg" class="img-main">
+            
+            <!-- Logo Hijau Melayang -->
+            <div class="floating-logo">
+                <img src="logo.png">
+            </div>
+        </div>
+
+        <div class="text-wrapper">
+            <span class="label-eltri">ELTRI</span>
+            <h2 class="name-title">ELTRI PUTRA ROMBEBUA</h2>
+            <div class="visi-content">
+                <p class="visi-label">VISI</p>
+                <p class="visi-text">"Tuhan Yang Maha Esa"</p>
+            </div>
+        </div>
+    </div>
+</section>

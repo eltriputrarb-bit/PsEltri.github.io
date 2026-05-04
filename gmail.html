@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Login - Eltri Digital</title>
+    <style>
+        /* --- BACKGROUND & LAYOUT --- */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('BUKU.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* --- LOGIN BOX (GLASSMORPHISM) --- */
+        .login-card {
+            background: rgba(0, 0, 0, 0.6); /* Transparan gelap */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 210, 255, 0.4); /* Border biru neon tipis */
+            width: 320px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+        }
+
+        .login-card h2 {
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+            color: #00d2ff;
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+        }
+
+        /* --- INPUT STYLE --- */
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 11px;
+            margin-bottom: 5px;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #00d2ff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- BUTTON STYLE --- */
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: #00d2ff;
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #fff;
+            box-shadow: 0 0 20px #00d2ff;
+            transform: translateY(-2px);
+        }
+
+        .footer-link {
+            display: block;
+            margin-top: 25px;
+            color: #888;
+            text-decoration: none;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .footer-link:hover { color: white; }
+
+        /* --- RESPONSIVE UNTUK HP --- */
+        @media screen and (max-width: 480px) {
+            .login-card {
+                width: 85%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>USER LOGIN</h2>
+        
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Masukkan Nama...">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="********">
+        </div>
+
+        <button class="btn-login" onclick="loginCheck()">LOGIN</button>
+
+        <a href="index.html" class="footer-link">← Kembali ke Beranda</a>
+    </div>
+
+    <!-- SISTEM LOGIN JAVASCRIPT -->
+    <script>
+        function loginCheck() {
+            var userInput = document.getElementById('username').value;
+            var passInput = document.getElementById('password').value;
+
+            // Validasi Sesuai Permintaan Bang Eltri
+            if (userInput === "Eltri" && passInput === "kirito") {
+                alert("ACCESS GRANTED! Welcome back, Hero.");
+                window.location.href = "about.html"; // Pindah ke halaman KTP
+            } else if (userInput === "" || passInput === "") {
+                alert("Woi! Isi dulu username sama passwordnya!");
+            } else {
+                alert("ACCESS DENIED! Username atau Password salah.");
+                document.getElementById('password').value = ""; // Reset password
+            }
+        }
+    </script>
+
+</body>
+</html>
