@@ -272,19 +272,39 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.side-content {
+    font-family: 'Roboto', sans-serif;
+    color: #333333; /* Warna teks abu-abu gelap yang nyaman dibaca */
+}
+
 .side-content h3 {
-    font-size: 14px;
-    color: #44aaff; /* Warna biru aksen */
-    border-bottom: 2px solid #44aaff;
-    margin-top: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 800; /* Tebal dan kokoh */
+    color: #0088cc; /* Warna biru cerah yang keren */
+    letter-spacing: 1.5px; /* Jarak huruf yang estetik */
+    border-bottom: 2px solid #0088cc; /* Garis bawah biru pembatas */
     padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .side-content p {
-    font-size: 12px;
-    color: #444;
-    line-height: 1.6;
-    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif; /* Menggunakan font modern */
+    font-size: 16px; /* Ukuran pas, tidak kekecilan */
+    font-weight: 500; /* Sedikit tebal agar tegas */
+    color: #2c3e50; /* Warna biru gelap charcoal yang elegan, bukan biru pudar jadul */
+    line-height: 1.8; /* Memberi ruang napas antar baris */
+    margin-bottom: 15px; /* Jarak antar baris teks */
+    letter-spacing: 0.3px; /* Jarak antar huruf yang rapi */
+}
+
+/* Kolom Kanan (Putih) */
+.main-content {
+    width: 65%;
+    padding: 50px;
+    color: #333;
 }
 
 /* Kolom Kanan (Putih) */
