@@ -173,16 +173,6 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.visi-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #2c3e50; /* Warna abu-abu gelap kebiruan yang elegan */
-    letter-spacing: 0.5px;
-    line-height: 1.6;
-    margin-bottom: 12px;
-}
-
 /* Gaya untuk "Tuhan Yang Maha Esa" (Seni, anggun & khidmat) */
 .visi-text {
     font-family: 'Playfair Display', Georgia, serif;
