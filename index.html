@@ -41,11 +41,31 @@
 </nav>
 </script>
     <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>ELTRI PUTRA ROMBEBUA</h1>
-        </div>
-    </section>
+<style>
+    /* CSS UNTUK HP (ANDROID) */
+    @media screen and (max-width: 768px) {
+        /* Kita tembak class hero-content dan h1-nya */
+        .hero-content h1 {
+            font-size: 20px !important;    /* Ukuran font dipaksa kecil */
+            line-height: 1.2 !important;   /* Jarak baris rapat */
+            margin-top: 50px !important;   /* Jarak dari navbar */
+            width: 100% !important;
+            text-align: center !important;
+        }
+        
+        /* Tambahan biar teksnya gak nabrak pinggir layar */
+        .hero-content {
+            padding: 0 20px !important;
+        }
+    }
+
+    /* CSS UNTUK LAPTOP */
+    @media screen and (min-width: 769px) {
+        .hero-content h1 {
+            font-size: 60px !important;   /* Di laptop tetep raksasa */
+        }
+    }
+</style>
 
 <!-- SCRIPT MENU -->
     <script>
