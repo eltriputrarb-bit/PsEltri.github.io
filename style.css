@@ -1,3 +1,7 @@
+:root {
+  color-scheme: only light; /* Meminta browser jangan ganti-ganti warna secara otomatis */
+}
+
 /* --- RESET & BODY --- */
 body {
     margin: 0;
