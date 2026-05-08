@@ -512,3 +512,16 @@ body {
     border-radius: 10px;
     transition: all 0.3s;
 }
+
+.menu-item {
+    color: white !important; /* PAKSA WARNA PUTIH */
+    text-decoration: none;   /* Hapus garis bawah link biar estetik */
+    font-family: 'Montserrat', sans-serif; /* Pake font yang tadi biar keren */
+    font-weight: 600;
+    opacity: 1 !important;   /* Pastikan gak transparan */
+}
+
+/* Biar pas ditekuk/diklik di HP warnanya gak jadi abu-abu */
+.menu-item:active, .menu-item:focus {
+    color: white !important;
+}
