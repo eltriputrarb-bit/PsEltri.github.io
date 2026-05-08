@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* FIX KOTAK BIRU ANDROID */
+}
+
 :root {
   color-scheme: light; /* Mengunci agar browser tidak otomatis jadi dark mode */
 }
@@ -8,59 +15,137 @@ body {
 }
 /* --- NAVBAR LAPTOP --- */
 .container-navbar {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    padding: 15px 5%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%; top: 0; z-index: 1000;
-    box-sizing: border-box;
+    width: 100%; top: 0; left: 0;
+    z-index: 10000;
+    height: 75px;
 }
 
-.ul-navbar a {
-    text-decoration: none; /* Menghilangkan garis bawah link */
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+.menu-home {
+    display: none;
+}
+
+/* --- ANIMASI TOMBOL HAMBURGER JADI X --- */
+.menu-toggle {
+    display: none; /* Sembunyi di laptop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 10001; /* Pastikan di atas sidebar */
     transition: 0.3s;
-    display: inline-block;
 }
 
-/* Efek Glow saat kursor di atas link */
-.ul-navbar a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 162, 255, 0.5);
-    transform: scale(1.05);
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6); /* Efek muter pro */
 }
 
-.ul-navbar .account-text {
-    color: #ffaa00 !important;
-    text-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
+/* KETIKA AKTIF (JADI X) */
+.menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-.navbar-left { display: flex; align-items: center; gap: 10px; }
-.logo { width: 45px; transition: 0.3s; }
-.logo:hover { transform: scale(1.1); }
-.brand-text { color: white; font-weight: bold; text-transform: uppercase; }
-
-.ul-navbar { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.menu-item {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 1.5px; text-transform: uppercase;
+.menu-toggle.is-active span:nth-child(2) {
+    opacity: 0; /* Garis tengah hilang */
 }
-.account-text { color: #ffaa00 !important; }
 
-/* --- HAMBURGER MENU (Sembunyi di Laptop) --- */
-.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.menu-toggle span { width: 25px; height: 3px; background: white; transition: 0.3s; }
+.menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
+/* Memastikan di HP tombolnya muncul */
+@media screen and (max-width: 768px) {
+    .menu-toggle { display: flex; }
+}
+
+.logo-link { display: flex; align-items: center; gap: 15px; text-decoration: none; color: white; }
+.logo { width: 45px !important; height: 45px !important; }
+.brand-text { font-weight: bold; text-transform: uppercase; }
+
+/* --- TAMPILAN LAPTOP (Layar Lebar) --- */
+@media screen and (min-width: 769px) {
+    .nav-home { display: none !important; } /* Sembunyikan Home */
+    
+    .ul-navbar {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+
+    .menu-item-btn {
+        text-decoration: none;
+        color: white !important;
+        font-weight: 700;
+        background: none !important;
+        border: none !important;
+    }
+    
+    .menu-item-btn i { display: none; } /* Sembunyi ikon di laptop */
+    .menu-toggle { display: none; }
+}
+
+/* --- TAMPILAN HP (Android Sidebar) --- */
+@media screen and (max-width: 768px) {
+    .container-navbar {
+        padding: 10px 20px;
+        height: 70px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        z-index: 10001; /* Di atas sidebar */
+    }
+
+    /* Animasi X */
+    .menu-toggle.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .ul-navbar {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 300px; height: 100vh;
+        background: #0f0f0f;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Menu mulai dari atas */
+        padding-top: 100px; /* Jarak agar menu di bawah tombol X */
+        align-items: center;
+        gap: 15px;
+        transition: 0.5s ease;
+        border-top-left-radius: 40px;
+        border-bottom-left-radius: 40px;
+        list-style: none;
+    }
+
+    .ul-navbar.active { right: 0; }
+
+    .menu-item-btn {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px 25px;
+        width: 260px;
+        border-radius: 50px;
+        color: white !important;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .active-btn { background: #0061f2 !important; }
+}
 /* --- HERO SECTION --- */
 .hero {
     height: 100vh;
@@ -80,25 +165,45 @@ body {
 .ktp-card::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1; }
 .content { position: relative; z-index: 2; padding: 20px; }
 
-/* --- SETTING ANDROID (HP) --- */
-@media screen and (max-width: 600px) {
-    .menu-toggle { display: flex; }
+/* Biar menu PUBLIC PROFILE tetap rapi di kanan laptop */
+@media screen and (min-width: 769px) {
     .ul-navbar {
-        position: fixed; top: 70px; right: -100%;
-        background: rgba(0,0,0,0.95); width: 100%; height: 40vh;
-        flex-direction: column; justify-content: center; align-items: center;
-        transition: 0.5s;
+        display: flex;
+        gap: 20px;
     }
-    .ul-navbar.active { right: 0; }
-    .hero h1 { font-size: 28px; }
-    .ktp-card { width: 90%; }
     
-    /* Animasi Silang */
-    .is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .is-active span:nth-child(2) { opacity: 0; }
-    .is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    /* Hilangkan background tombol & ikon di laptop biar cuma teks elegan */
+    .menu-item-btn {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    .menu-item-btn i { display: none; }
 }
 
+/* --- SETTING HP (SIDEBAR) --- */
+@media screen and (max-width: 768px) {
+    /* Munculkan kembali menu HOME khusus di HP */
+    .menu-home {
+        display: block; 
+    }
+    
+    /* Style tombol biru seperti screenshot Abang */
+    .menu-item-btn {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px 25px;
+        width: 250px;
+        border-radius: 50px;
+    }
+}
+/* --- ANIMASI TOMBOL MENU --- */
+.menu-toggle span {
+    transition: 0.4s;
+    border-radius: 10px;
+}
 
 /*/////////////////////////////////////////////////////////////////*/
 
@@ -184,25 +289,7 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     margin-top: 5px;
 }
-/* --- RESPONSIVE ANDROID --- */
-/* Responsif Android */
-@media screen and (max-width: 600px) {
-    .container-flex {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-    
-    .floating-logo {
-        width: 80px; /* Kecilin dikit di HP */
-        right: 10px;
-        bottom: -10px;
-    }
-    
-    .name-title {
-        font-size: 24px;
-    }
-}
+
 
 
 /*/////////////////////////////////////////////////////////////////*/
@@ -490,46 +577,4 @@ body {
     opacity: 0.8;
 }
 
-.menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    background: transparent !important; /* Biar gak ada kotak latar belakang */
-    border: none;
-    outline: none;
-    -webkit-tap-highlight-color: transparent; /* HAPUS KOTAK BIRU SAAT DIKLIK */
-}
 
-/* Garis-garis menunya */
-.menu-toggle span {
-    background-color: white !important;
-    display: block;
-    width: 100%;
-    height: 3px;
-    border-radius: 10px;
-}
-
-.menu-toggle.is-active {
-    color: white !important;
-}
-
-.menu-item {
-    color: white !important;           /* Teks wajib putih */
-    background: transparent !important; /* Hapus kotak biru/putih di belakang teks */
-    text-decoration: none !important;  /* Hapus garis bawah */
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 10px;
-    display: inline-block;
-    -webkit-tap-highlight-color: transparent; /* Anti kotak biru saat diklik di HP */
-}
-
-/* Supaya pas ditekan (active) tidak muncul warna aneh */
-.menu-item:active, .menu-item:focus {
-    background: transparent !important;
-    color: white !important; /* Berubah jadi biru keren dikit pas diklik boleh */
-}
