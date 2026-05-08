@@ -1,14 +1,11 @@
 :root {
-  color-scheme: only light; /* Meminta browser jangan ganti-ganti warna secara otomatis */
+  color-scheme: light; /* Mengunci agar browser tidak otomatis jadi dark mode */
 }
 
-/* --- RESET & BODY --- */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Warna dasar kalau gambar gagal loading */
+    background-color: #ffffff !important; /* Paksa background jadi putih bersih */
+    color: #000000 !important; /* Paksa teks tetap hitam */
 }
-
 /* --- NAVBAR LAPTOP --- */
 .container-navbar {
     background: rgba(0, 0, 0, 0.7);
