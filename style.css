@@ -531,5 +531,5 @@ body {
 /* Supaya pas ditekan (active) tidak muncul warna aneh */
 .menu-item:active, .menu-item:focus {
     background: transparent !important;
-    color: #0088cc !important; /* Berubah jadi biru keren dikit pas diklik boleh */
+    color: white !important; /* Berubah jadi biru keren dikit pas diklik boleh */
 }
