@@ -505,23 +505,31 @@ body {
 
 /* Garis-garis menunya */
 .menu-toggle span {
+    background-color: white !important;
     display: block;
     width: 100%;
     height: 3px;
-    background-color: white !important; /* PAKSA WARNA PUTIH */
     border-radius: 10px;
-    transition: all 0.3s;
+}
+
+.menu-toggle.is-active {
+    color: white !important;
 }
 
 .menu-item {
-    color: white !important; /* PAKSA WARNA PUTIH */
-    text-decoration: none;   /* Hapus garis bawah link biar estetik */
-    font-family: 'Montserrat', sans-serif; /* Pake font yang tadi biar keren */
-    font-weight: 600;
-    opacity: 1 !important;   /* Pastikan gak transparan */
+    color: white !important;           /* Teks wajib putih */
+    background: transparent !important; /* Hapus kotak biru/putih di belakang teks */
+    text-decoration: none !important;  /* Hapus garis bawah */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 10px;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent; /* Anti kotak biru saat diklik di HP */
 }
 
-/* Biar pas ditekuk/diklik di HP warnanya gak jadi abu-abu */
+/* Supaya pas ditekan (active) tidak muncul warna aneh */
 .menu-item:active, .menu-item:focus {
-    color: white !important;
+    background: transparent !important;
+    color: #0088cc !important; /* Berubah jadi biru keren dikit pas diklik boleh */
 }
