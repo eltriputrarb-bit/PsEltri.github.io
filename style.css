@@ -468,8 +468,22 @@ body {
     transition: 0.3s;
 }
 
-/* Warna masing-masing ikon sesuai gambar */
-.instagram { background-color: #e4405f; }
+/* Warna Background Box-nya */
+.instagram { 
+    background-color: #e4405f; 
+}
+
+/* WARNA IKONNYA (Harus dipaksa putih) */
+.instagram i {
+    color: white !important; 
+    font-size: 24px; /* Biar ukurannya pas dan kelihatan */
+}
+
+/* Tambahan biar pas diklik di Android gak muncul kotak biru */
+.social-icons a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
 
 .icon:hover {
     transform: scale(1.2); /* Efek membesar saat disentuh */
