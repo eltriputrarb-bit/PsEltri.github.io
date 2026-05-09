@@ -600,4 +600,27 @@ body {
     opacity: 0.8;
 }
 
+/* --- CUSTOM TOMBOL NAVBAR GAHAR --- */
+.btn-gahar {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 13px !important;
+    letter-spacing: 1.5px; /* Jarak huruf biar kayak brand mahal */
+    color: #ffffff !important;
+    padding: 8px 20px !important;
+    border: 2px solid #0088cc; /* Frame biru gahar */
+    border-radius: 50px; /* Bentuk kapsul biar modern */
+    background: transparent;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 136, 204, 0.5);
+}
+
+/* Pas kursor nempel (Hover) */
+.btn-gahar:hover {
+    background: #0088cc; /* Full biru */
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(0, 136, 204, 0.8); /* Efek glow nendang */
+    transform: translateY(-2px); /* Tombol kayak naik sedikit */
+}
+
 
