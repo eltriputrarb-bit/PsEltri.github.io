@@ -546,23 +546,93 @@ body {
 }
 
 
+/* ==========================================================================
+   STYLE FOOTER SOSIAL MEDIA (FIXED ANDROID & ANTI-HIGHLIGHT)
+   ========================================================================== */
 .social-footer {
-    background-color: #111;
-    padding: 10px 0 30px 0; /* Angka 10px ini untuk mengecilkan jarak atas */
+    background-color: #111 !important;
+    padding: 10px 0 30px 0; /* Jarak atas tipis, jarak bawah aman */
     text-align: center;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .social-footer h3 {
-    margin-top: 0; /* Memastikan tidak ada jarak tambahan di atas tulisan */
+    margin-top: 0;
+    margin-bottom: 20px;
     font-family: 'Yellowtail', cursive; 
     color: #ff8c00;
     font-size: 28px;
+    letter-spacing: 1px;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    gap: 15px; /* Sesuai setingan layout Abang */
+}
+
+/* Base Box Tombol Sosial Media (Android Friendly) */
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; /* Bentuk Bulat */
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    
+    /* Kunci utama: Menghilangkan kotak biru jelek saat di-tap di HP Android */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* WARNA IKON GLOBAL (Dipaksa Putih & Ukuran Pas) */
+.social-icons a i {
+    color: #ffffff !important; 
+    font-size: 24px !important; /* Ukuran pas dan kelihatan gahar */
+    transition: all 0.3s ease;
+}
+
+/* --- TOMBOL INSTAGRAM (Warna Box & Efek Hover) --- */
+.social-icons a.instagram { 
+    background-color: #e4405f !important; /* Warna Background Box Asli Instagram */
+}
+.social-icons a.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; /* Gradasi premium pas di-hover */
+    box-shadow: 0 0 20px rgba(228, 64, 95, 0.6);
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* --- TOMBOL X LOGO (Warna Box & Efek Hover) --- */
+.social-icons a.x-logo {
+    background-color: #000000 !important; /* Box dasar hitam pekat khas X */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.social-icons a.x-logo:hover {
+    background-color: #ffffff !important; /* Box berubah putih solid */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    border-color: #ffffff !important;
+    transform: translateY(-4px) scale(1.05);
+}
+/* Pas di-hover, ikon dalam X berubah hitam supaya kontras di atas box putih */
+.social-icons a.x-logo:hover i {
+    color: #000000 !important;
+}
+
+/* Styling Khusus untuk Ikon SVG X */
+.social-icons a.x-logo .svg-x {
+    width: 22px; /* Ukuran pas disamakan dengan Instagram */
+    height: 22px;
+    fill: #ffffff; /* Memaksa warna SVG jadi putih murni */
+    transition: all 0.3s ease;
+}
+
+/* Pas di-hover, warna logo dalam SVG berubah jadi hitam pekat */
+.social-icons a.x-logo:hover .svg-x {
+    fill: #000000;
 }
 
 .icon {
