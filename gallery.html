@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - ELTRI PROJECT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+    <div id="galleryModal" class="modal-lightbox" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="imgFull" alt="Preview Ukuran Penuh">
+    </div>
+
+    <nav class="container-navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" class="logo" alt="Logo"> 
+                <span class="brand-text">ELTRI PROJECT</span>
+            </a>
+        </div>
+
+        <<div class="nav-right">
+    <ul class="ul-navbar" id="nav-links">
+        <li><a href="index.html" class="menu-item-btn btn-gahar"><i class="fas fa-home"></i> HOME</a></li>
+        <li class="mobile-only"><a href="gallery.html" class="menu-item-btn active-btn btn-gahar"><i class="fas fa-images"></i> GALLERY</a></li>
+        <li><a href="Proyek.html" class="menu-item-btn btn-public btn-gahar"><i class="fas fa-user"></i> PUBLIC PROFILE</a></li>
+    </ul>
+    
+    <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+    </nav> <main class="gallery-container">
+        <header class="gallery-header">
+            <h1>MY <span>GALLERY</span></h1>
+            <p>Koleksi documentation, proyek gahar, dan karya terbaik dari ELTRI PROJECT.</p>
+        </header>
+
+        <section class="gallery-grid">
+            
+            <div class="gallery-card">
+                <div class="card-img-wrapper">
+                    <img src="mkssr.jpg" alt="Lokasi Makassar" onclick="openModal(this.src)">
+                </div>
+                <div class="card-info">
+                    <h3>LOKASI: MAKASSAR</h3>
+                    <p>Dokumentasi jalanan kota Makassar dengan sudut pandang sinematik.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        // Fungsi Buka-Tutup Hamburger Menu HP
+        function toggleMenu() {
+            const menu = document.getElementById("nav-links");
+            const burger = document.getElementById("mobile-menu");
+            menu.classList.toggle("active");
+            burger.classList.toggle("is-active");
+        }
+
+        // Otomatis tutup sidebar jika area luar diklik jari
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById("nav-links");
+            const burger = document.getElementById("mobile-menu");
+            
+            if (!menu.contains(event.target) && !burger.contains(event.target)) {
+                menu.classList.remove("active");
+                burger.classList.remove("is-active");
+            }
+        });
+
+        // Fungsi Buka Foto Full Screen
+        function openModal(imageSrc) {
+            const modal = document.getElementById("galleryModal");
+            const modalImg = document.getElementById("imgFull");
+            modalImg.src = imageSrc;
+            modal.classList.add("show");
+        }
+
+        // Fungsi Tutup Foto Full Screen
+        function closeModal() {
+            const modal = document.getElementById("galleryModal");
+            modal.classList.remove("show");
+        }
+    </script>
+</body>
+</html>
