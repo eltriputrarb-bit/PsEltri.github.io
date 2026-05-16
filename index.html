@@ -9,36 +9,35 @@
     <!-- Link Font Montserrat agar teks keren -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+
 </head>
 <body>    
     <!-- NAVBAR (Support Laptop & Android) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <nav class="container-navbar">
-    <div class="navbar-left">
-        <a href="index.html" class="logo-link">
-            <img src="logo.png" class="logo"> 
-            <span class="brand-text">ELTRI PROJECT</span>
-        </a>
-    </div>
-
-    <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-    </div>
-
-    <ul class="ul-navbar" id="nav-links">
-        <li class="nav-home">
-            <a href="index.html" class="menu-item-btn active-btn">
-                <i class="fas fa-home"></i> HOME
+        <div class="nav-left">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" class="logo" alt="Logo"> 
+                <span class="brand-text">ELTRI PROJECT</span>
             </a>
-        </li>
-        <li>
-            <a href="Proyek.html" class="menu-item-btn btn-gahar">
-                <i class="fas fa-user"></i> PUBLIC PROFILE ELTRI
-            </a>
-        </li>
-    </ul>
-</nav>
+        </div>
+
+        <div class="nav-right">
+            <ul class="ul-navbar" id="nav-links">
+                <li><a href="index.html" class="menu-item-btn btn-gahar"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="gallery.html" class="menu-item-btn btn-gahar"><i class="fas fa-images"></i> GALLERY</a></li>
+                <li><a href="Proyek.html" class="menu-item-btn btn-public btn-gahar"><i class="fas fa-user"></i> PUBLIC PROFILE</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 </script>
 
 <style>
